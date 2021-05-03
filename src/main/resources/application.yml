@@ -1,0 +1,48 @@
+server:
+  port: 8092
+spring:
+  datasource:
+    username: root
+    password: 838502
+    url: jdbc:mysql://120.79.158.25:3306/asset_manage?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+  hikari:
+    minimum-idle: 3  # 最小空闲连接数量
+    maximum-pool-size: 15  # 连接池最大连接数，默认是10
+    max-lifetime: 1800000  # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+    connection-test-query: SELECT 1
+  redis:
+    host: 120.79.158.25
+    port: 6371
+    database: 1
+    password: 
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+#    timeout: 2000
+    data:
+      redis:
+        repositories:
+          enabled: false
+
+mybatis:
+#  configLocation: classpath:mybatis/mybatis-config.xml
+  mapperLocations: classpath:mybatis/mapper/*Mapper.xml
+  typeAliasesPackage: com.tusdao.**.model
+  checkConfigLocation: true
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
+
+cbs:
+#  imagesPath: /Users/sera/Desktop/program/cfams/upload-img/
+#  imagesPath: /root/java/assetManage/picture/
+  imagesPath: C:/Users/Admin/Desktop/javaProject/picture/
