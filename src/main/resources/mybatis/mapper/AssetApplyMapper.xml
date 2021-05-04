@@ -88,10 +88,10 @@
     'true' as QUERYID,
     <include refid="Base_Column_List" />
     from asset_apply
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null and orderByClause != ''" >
       order by ${orderByClause}
     </if>
   </select>
@@ -107,7 +107,7 @@
   </delete>
   <delete id="deleteByExample" parameterType="com.assetManage.tusdt.model.AssetApplyExample" >
     delete from asset_apply
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
@@ -128,156 +128,156 @@
   <insert id="insertSelective" parameterType="com.assetManage.tusdt.model.AssetApply" >
     insert into asset_apply
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         id,
       </if>
-      <if test="type != null" >
+      <if test="type != null and type != ''" >
         type,
       </if>
-      <if test="number != null" >
+      <if test="number != null and number != ''" >
         number,
       </if>
-      <if test="userId != null" >
+      <if test="userId != null and userId != ''" >
         user_id,
       </if>
-      <if test="assetId != null" >
+      <if test="assetId != null and assetId != ''" >
         asset_id,
       </if>
-      <if test="address != null" >
+      <if test="address != null and address != ''" >
         address,
       </if>
-      <if test="purpose != null" >
+      <if test="purpose != null and purpose != ''" >
         purpose,
       </if>
-      <if test="startTime != null" >
+      <if test="startTime != null " >
         start_time,
       </if>
       <if test="endTime != null" >
         end_time,
       </if>
-      <if test="urgency != null" >
+      <if test="urgency != null and urgency != ''" >
         urgency,
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         remarks,
       </if>
-      <if test="result != null" >
+      <if test="result != null and result != ''" >
         result,
       </if>
-      <if test="image1 != null" >
+      <if test="image1 != null and image1 != ''" >
         image1,
       </if>
-      <if test="image2 != null" >
+      <if test="image2 != null and image2 != ''" >
         image2,
       </if>
-      <if test="image3 != null" >
+      <if test="image3 != null and image3 != ''" >
         image3,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
+      <if test="type != null and type != ''" >
         #{type,jdbcType=INTEGER},
       </if>
-      <if test="number != null" >
+      <if test="number != null and number != ''" >
         #{number,jdbcType=INTEGER},
       </if>
-      <if test="userId != null" >
+      <if test="userId != null and userId != ''" >
         #{userId,jdbcType=INTEGER},
       </if>
-      <if test="assetId != null" >
+      <if test="assetId != null and assetId != ''" >
         #{assetId,jdbcType=INTEGER},
       </if>
-      <if test="address != null" >
+      <if test="address != null and address != ''" >
         #{address,jdbcType=VARCHAR},
       </if>
-      <if test="purpose != null" >
+      <if test="purpose != null and purpose != ''" >
         #{purpose,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null" >
         #{startTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="endTime != null" >
+      <if test="endTime != null " >
         #{endTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="urgency != null" >
+      <if test="urgency != null and urgency != ''" >
         #{urgency,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="result != null" >
+      <if test="result != null and result != ''" >
         #{result,jdbcType=INTEGER},
       </if>
-      <if test="image1 != null" >
+      <if test="image1 != null and image1 != ''" >
         #{image1,jdbcType=VARCHAR},
       </if>
-      <if test="image2 != null" >
+      <if test="image2 != null and image2 != ''" >
         #{image2,jdbcType=VARCHAR},
       </if>
-      <if test="image3 != null" >
+      <if test="image3 != null and image3 != ''" >
         #{image3,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.assetManage.tusdt.model.AssetApplyExample" resultType="java.lang.Integer" >
     select count(*) from asset_apply
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update asset_apply
     <set >
-      <if test="record.id != null" >
+      <if test="record.id != null and record.id != ''" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.type != null" >
+      <if test="record.type != null and record.type != ''" >
         type = #{record.type,jdbcType=INTEGER},
       </if>
-      <if test="record.number != null" >
+      <if test="record.number != null and record.number != ''" >
         number = #{record.number,jdbcType=INTEGER},
       </if>
-      <if test="record.userId != null" >
+      <if test="record.userId != null and record.userId != ''" >
         user_id = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.assetId != null" >
+      <if test="record.assetId != null and record.assetId != ''" >
         asset_id = #{record.assetId,jdbcType=INTEGER},
       </if>
-      <if test="record.address != null" >
+      <if test="record.address != null and record.address != ''" >
         address = #{record.address,jdbcType=VARCHAR},
       </if>
-      <if test="record.purpose != null" >
+      <if test="record.purpose != null and record.purpose != ''" >
         purpose = #{record.purpose,jdbcType=VARCHAR},
       </if>
-      <if test="record.startTime != null" >
+      <if test="record.startTime != null " >
         start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.endTime != null" >
         end_time = #{record.endTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.urgency != null" >
+      <if test="record.urgency != null and record.urgency != ''" >
         urgency = #{record.urgency,jdbcType=INTEGER},
       </if>
-      <if test="record.remarks != null" >
+      <if test="record.remarks != null and record.remarks != ''" >
         remarks = #{record.remarks,jdbcType=VARCHAR},
       </if>
-      <if test="record.result != null" >
+      <if test="record.result != null and record.result != ''" >
         result = #{record.result,jdbcType=INTEGER},
       </if>
-      <if test="record.image1 != null" >
+      <if test="record.image1 != null and record.image1 != ''" >
         image1 = #{record.image1,jdbcType=VARCHAR},
       </if>
-      <if test="record.image2 != null" >
+      <if test="record.image2 != null and record.image2 != ''" >
         image2 = #{record.image2,jdbcType=VARCHAR},
       </if>
-      <if test="record.image3 != null" >
+      <if test="record.image3 != null and record.image3 != ''" >
         image3 = #{record.image3,jdbcType=VARCHAR},
       </if>
     </set>
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
@@ -298,53 +298,53 @@
     image1 = #{record.image1,jdbcType=VARCHAR},
     image2 = #{record.image2,jdbcType=VARCHAR},
     image3 = #{record.image3,jdbcType=VARCHAR}
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.assetManage.tusdt.model.AssetApply" >
     update asset_apply
     <set >
-      <if test="type != null" >
+      <if test="type != null and type != ''" >
         type = #{type,jdbcType=INTEGER},
       </if>
-      <if test="number != null" >
+      <if test="number != null and number != ''" >
         number = #{number,jdbcType=INTEGER},
       </if>
-      <if test="userId != null" >
+      <if test="userId != null and userId != ''" >
         user_id = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="assetId != null" >
+      <if test="assetId != null and assetId != ''" >
         asset_id = #{assetId,jdbcType=INTEGER},
       </if>
-      <if test="address != null" >
+      <if test="address != null and address != ''" >
         address = #{address,jdbcType=VARCHAR},
       </if>
-      <if test="purpose != null" >
+      <if test="purpose != null and purpose != ''" >
         purpose = #{purpose,jdbcType=VARCHAR},
       </if>
-      <if test="startTime != null" >
+      <if test="startTime != null " >
         start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="endTime != null" >
+      <if test="endTime != null " >
         end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="urgency != null" >
+      <if test="urgency != null and urgency != ''" >
         urgency = #{urgency,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         remarks = #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="result != null" >
+      <if test="result != null and result != ''" >
         result = #{result,jdbcType=INTEGER},
       </if>
-      <if test="image1 != null" >
+      <if test="image1 != null and image1 != ''" >
         image1 = #{image1,jdbcType=VARCHAR},
       </if>
-      <if test="image2 != null" >
+      <if test="image2 != null and image2 != ''" >
         image2 = #{image2,jdbcType=VARCHAR},
       </if>
-      <if test="image3 != null" >
+      <if test="image3 != null and image3 != ''" >
         image3 = #{image3,jdbcType=VARCHAR},
       </if>
     </set>
@@ -381,19 +381,19 @@
     from asset_apply aa, asset_info ai, user u
     where aa.user_id = u.id
     and aa.asset_id = ai.id
-    <if test="assetId != null" >
+    <if test="assetId != null and assetId != ''" >
       and asset_id = #{assetId,jdbcType=INTEGER}
     </if>
-    <if test="userName != null">
+    <if test="userName != null and userName != ''">
       AND u.user_name like CONCAT(CONCAT('%',#{userName}),'%')
     </if>
-    <if test="status != null" >
+    <if test="status != null and status != ''" >
       and aa.result = #{status,jdbcType=INTEGER}
     </if>
-    <if test="jobLevel != null" >
+    <if test="jobLevel != null and jobLevel != ''" >
       and u.job_level = #{jobLevel,jdbcType=INTEGER}
     </if>
-    <if test="telephone != null" >
+    <if test="telephone != null and telephone != ''" >
       and u.telephone = #{telephone,jdbcType=VARCHAR}
     </if>
     order by aa.start_time desc
@@ -402,19 +402,19 @@
     select aa.id, ai.asset_name assetName ,aa.type applyType, u.user_name userName,date_format(aa.start_time, '%Y-%m-%d %H:%i:%s') startTime,aa.result result,ai.status status from  asset_apply aa, asset_info ai, user u
     where aa.asset_id = ai.id
     and aa.user_id = u.id
-    <if test="applyId != null" >
-      and aa.id = #{applyId,jdbcType=INTEGER}
-    </if>
-    <if test="assetName != null">
+<!--    <if test="applyId != null" >-->
+<!--      and aa.id = #{applyId,jdbcType=INTEGER}-->
+<!--    </if>-->
+    <if test="assetName != null and assetName != ''">
       AND ai.asset_name like CONCAT(CONCAT('%',#{assetName}),'%')
     </if>
-    <if test="userName != null">
+    <if test="userName != null and userName != ''">
       AND u.user_name like CONCAT(CONCAT('%',#{userName}),'%')
     </if>
-    <if test="type != null" >
+    <if test="type != null and type != ''" >
       and aa.type = #{type,jdbcType=INTEGER}
     </if>
-    <if test="userId != null" >
+    <if test="userId != null and userId != ''" >
       and aa.user_id = #{userId,jdbcType=INTEGER}
     </if>
   </select>

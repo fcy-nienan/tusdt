@@ -80,10 +80,10 @@
     'true' as QUERYID,
     <include refid="Base_Column_List" />
     from asset_map
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null and orderByClause != ''" >
       order by ${orderByClause}
     </if>
   </select>
@@ -99,7 +99,7 @@
   </delete>
   <delete id="deleteByExample" parameterType="com.assetManage.tusdt.model.AssetMapExample" >
     delete from asset_map
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
@@ -114,93 +114,93 @@
   <insert id="insertSelective" parameterType="com.assetManage.tusdt.model.AssetMap" >
     insert into asset_map
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         id,
       </if>
-      <if test="mapName != null" >
+      <if test="mapName != null and mapName != ''" >
         map_name,
       </if>
-      <if test="mapX != null" >
+      <if test="mapX != null and mapX != ''" >
         map_x,
       </if>
-      <if test="mapY != null" >
+      <if test="mapY != null and mapY != ''" >
         map_y,
       </if>
-      <if test="mapLength != null" >
+      <if test="mapLength != null and mapLength != ''" >
         map_length,
       </if>
-      <if test="mapWidth != null" >
+      <if test="mapWidth != null and mapWidth != ''" >
         map_width,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null " >
         create_time,
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         is_delete,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="mapName != null" >
+      <if test="mapName != null and mapName != ''" >
         #{mapName,jdbcType=VARCHAR},
       </if>
-      <if test="mapX != null" >
+      <if test="mapX != null and mapX != ''" >
         #{mapX,jdbcType=INTEGER},
       </if>
-      <if test="mapY != null" >
+      <if test="mapY != null and mapY != ''" >
         #{mapY,jdbcType=INTEGER},
       </if>
-      <if test="mapLength != null" >
+      <if test="mapLength != null and mapLength != ''" >
         #{mapLength,jdbcType=INTEGER},
       </if>
-      <if test="mapWidth != null" >
+      <if test="mapWidth != null and mapWidth != ''" >
         #{mapWidth,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null and createTime != ''" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         #{isDelete,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.assetManage.tusdt.model.AssetMapExample" resultType="java.lang.Integer" >
     select count(*) from asset_map
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update asset_map
     <set >
-      <if test="record.id != null" >
+      <if test="record.id != null and record.id != ''" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.mapName != null" >
+      <if test="record.mapName != null and record.mapName != ''" >
         map_name = #{record.mapName,jdbcType=VARCHAR},
       </if>
-      <if test="record.mapX != null" >
+      <if test="record.mapX != null and record.mapX != ''" >
         map_x = #{record.mapX,jdbcType=INTEGER},
       </if>
-      <if test="record.mapY != null" >
+      <if test="record.mapY != null and record.mapY != ''" >
         map_y = #{record.mapY,jdbcType=INTEGER},
       </if>
-      <if test="record.mapLength != null" >
+      <if test="record.mapLength != null and record.mapLength != ''" >
         map_length = #{record.mapLength,jdbcType=INTEGER},
       </if>
-      <if test="record.mapWidth != null" >
+      <if test="record.mapWidth != null and record.mapWidth != ''" >
         map_width = #{record.mapWidth,jdbcType=INTEGER},
       </if>
-      <if test="record.createTime != null" >
+      <if test="record.createTime != null " >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.isDelete != null" >
+      <if test="record.isDelete != null and record.isDelete != ''" >
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
     </set>
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
@@ -214,32 +214,32 @@
       map_width = #{record.mapWidth,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       is_delete = #{record.isDelete,jdbcType=INTEGER}
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.assetManage.tusdt.model.AssetMap" >
     update asset_map
     <set >
-      <if test="mapName != null" >
+      <if test="mapName != null and mapName != ''" >
         map_name = #{mapName,jdbcType=VARCHAR},
       </if>
-      <if test="mapX != null" >
+      <if test="mapX != null and mapX != ''" >
         map_x = #{mapX,jdbcType=INTEGER},
       </if>
-      <if test="mapY != null" >
+      <if test="mapY != null and mapY != ''" >
         map_y = #{mapY,jdbcType=INTEGER},
       </if>
-      <if test="mapLength != null" >
+      <if test="mapLength != null and mapLength != ''" >
         map_length = #{mapLength,jdbcType=INTEGER},
       </if>
-      <if test="mapWidth != null" >
+      <if test="mapWidth != null and mapWidth != ''" >
         map_width = #{mapWidth,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
@@ -269,10 +269,10 @@
   </select>
   <select id="getAssetLocation" resultType="java.lang.Integer">
     select  ai.map_id  from asset_info ai where 1>0
-    <if test="assetId != null">
+    <if test="assetId != null and assetId != ''">
       and ai.id =  #{assetId,jdbcType=INTEGER}
     </if>
-    <if test="assetName != null">
+    <if test="assetName != null and assetName != ''">
       and ai.asset_name like CONCAT(CONCAT('%',#{assetName}),'%')
     </if>
   </select>

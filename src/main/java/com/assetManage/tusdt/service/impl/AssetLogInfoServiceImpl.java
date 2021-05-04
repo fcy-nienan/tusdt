@@ -24,6 +24,8 @@ public class AssetLogInfoServiceImpl implements AssetLogInfoService {
 
     @Override
     public List<OperLogListBO> getOperLog(String userName, String dataFrom, String dataEnd) {
+        System.out.println(dataFrom);
+        System.out.println(dataEnd);
         return operLogMapper.getOperLogList(userName,dataFrom,dataEnd);
     }
 

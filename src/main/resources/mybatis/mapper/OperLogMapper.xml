@@ -76,10 +76,10 @@
     'true' as QUERYID,
     <include refid="Base_Column_List" />
     from oper_log
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null and orderByClause != ''" >
       order by ${orderByClause}
     </if>
   </select>
@@ -95,7 +95,7 @@
   </delete>
   <delete id="deleteByExample" parameterType="com.assetManage.tusdt.model.OperLogExample" >
     delete from oper_log
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
@@ -108,57 +108,57 @@
   <insert id="insertSelective" parameterType="com.assetManage.tusdt.model.OperLog" >
     insert into oper_log
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         id,
       </if>
-      <if test="userId != null" >
+      <if test="userId != null and userId != ''" >
         user_id,
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         remarks,
       </if>
-      <if test="startTime != null" >
+      <if test="startTime != null " >
         start_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="userId != null" >
+      <if test="userId != null and userId != ''" >
         #{userId,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="startTime != null" >
+      <if test="startTime != null and startTime != ''" >
         #{startTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.assetManage.tusdt.model.OperLogExample" resultType="java.lang.Integer" >
     select count(*) from oper_log
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update oper_log
     <set >
-      <if test="record.id != null" >
+      <if test="record.id != null and record.id != ''" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.userId != null" >
+      <if test="record.userId != null record.userId != ''" >
         user_id = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.remarks != null" >
+      <if test="record.remarks != null and record.remarks != ''" >
         remarks = #{record.remarks,jdbcType=VARCHAR},
       </if>
-      <if test="record.startTime != null" >
+      <if test="record.startTime != null " >
         start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
@@ -168,20 +168,20 @@
       user_id = #{record.userId,jdbcType=INTEGER},
       remarks = #{record.remarks,jdbcType=VARCHAR},
       start_time = #{record.startTime,jdbcType=TIMESTAMP}
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.assetManage.tusdt.model.OperLog" >
     update oper_log
     <set >
-      <if test="userId != null" >
+      <if test="userId != null and userId != ''" >
         user_id = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         remarks = #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="startTime != null" >
+      <if test="startTime != null " >
         start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
     </set>
@@ -197,13 +197,13 @@
   <select id="getOperLogList" resultType="com.assetManage.tusdt.model.bo.OperLogListBO">
     select ol.id, ol.user_id userId, u.user_name userName, ol.remarks,date_format(ol.start_time, '%Y-%m-%d %H:%i:%s') startTime from oper_log ol, user u
     where ol.user_id = u.id
-    <if test="userName != null">
+    <if test="userName != null and userName != ''">
       and u.user_name like CONCAT(CONCAT('%',#{userName}),'%')
     </if>
-    <if test="dataFrom != null" >
+    <if test="dataFrom != null " >
       and start_time >= #{dataFrom,jdbcType=VARCHAR}
     </if>
-    <if test="dataEnd != null" >
+    <if test="dataEnd != null " >
       and  #{dataEnd,jdbcType=VARCHAR} >= start_time
     </if>
     order by ol.start_time desc

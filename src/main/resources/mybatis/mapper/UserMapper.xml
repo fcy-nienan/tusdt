@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_name userName, password, signature, telephone, email, job_level jobLevel, status, is_delete isDelete
+    id, user_name , password, signature, telephone, email, job_level jobLevel, status, is_delete
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.assetManage.tusdt.model.UserExample" >
     select
@@ -81,10 +81,10 @@
     'true' as QUERYID,
     <include refid="Base_Column_List" />
     from user
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null and orderByClause != ''" >
       order by ${orderByClause}
     </if>
   </select>
@@ -100,7 +100,7 @@
   </delete>
   <delete id="deleteByExample" parameterType="com.assetManage.tusdt.model.UserExample" >
     delete from user
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != '' " >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
@@ -117,102 +117,102 @@
   <insert id="insertSelective" parameterType="com.assetManage.tusdt.model.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         id,
       </if>
-      <if test="userName != null" >
+      <if test="userName != null and userName != ''" >
         user_name,
       </if>
-      <if test="password != null" >
+      <if test="password != null and password != ''" >
         password,
       </if>
-      <if test="signature != null" >
+      <if test="signature != null and signature != ''" >
         signature,
       </if>
-      <if test="telephone != null" >
+      <if test="telephone != null and telephone != ''" >
         telephone,
       </if>
-      <if test="email != null" >
+      <if test="email != null and email != ''" >
         email,
       </if>
-      <if test="jobLevel != null" >
+      <if test="jobLevel != null and jobLevel != ''" >
         job_level,
       </if>
-      <if test="status != null" >
+      <if test="status != null and status != ''" >
         status,
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         is_delete,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="userName != null" >
+      <if test="userName != null and userName != ''" >
         #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
+      <if test="password != null and password != ''" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="signature != null" >
+      <if test="signature != null and signature != ''" >
         #{signature,jdbcType=VARCHAR},
       </if>
-      <if test="telephone != null" >
+      <if test="telephone != null and telephone != ''" >
         #{telephone,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
+      <if test="email != null and email != ''" >
         #{email,jdbcType=VARCHAR},
       </if>
-      <if test="jobLevel != null" >
+      <if test="jobLevel != null and jobLevel != ''" >
         #{jobLevel,jdbcType=INTEGER},
       </if>
-      <if test="status != null" >
+      <if test="status != null and status != ''" >
         #{status,jdbcType=INTEGER},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         #{isDelete,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.assetManage.tusdt.model.UserExample" resultType="java.lang.Integer" >
     select count(*) from user
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update user
     <set >
-      <if test="record.id != null" >
+      <if test="record.id != null and record.id != ''" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.userName != null" >
+      <if test="record.userName != null and record.userName != ''" >
         user_name = #{record.userName,jdbcType=VARCHAR},
       </if>
-      <if test="record.password != null" >
+      <if test="record.password != null and record.password != ''" >
         password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="record.signature != null" >
+      <if test="record.signature != null and record.signature != ''" >
         signature = #{record.signature,jdbcType=VARCHAR},
       </if>
-      <if test="record.telephone != null" >
+      <if test="record.telephone != null and record.telephone != ''" >
         telephone = #{record.telephone,jdbcType=VARCHAR},
       </if>
-      <if test="record.email != null" >
+      <if test="record.email != null and record.email != ''" >
         email = #{record.email,jdbcType=VARCHAR},
       </if>
-      <if test="record.jobLevel != null" >
+      <if test="record.jobLevel != null and record.jobLevel != ''" >
         job_level = #{record.jobLevel,jdbcType=INTEGER},
       </if>
-      <if test="record.status != null" >
+      <if test="record.status != null and record.status != ''" >
         status = #{record.status,jdbcType=INTEGER},
       </if>
-      <if test="record.isDelete != null" >
+      <if test="record.isDelete != null and record.isDelete != ''" >
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
     </set>
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
@@ -227,35 +227,35 @@
       job_level = #{record.jobLevel,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       is_delete = #{record.isDelete,jdbcType=INTEGER}
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.assetManage.tusdt.model.User" >
     update user
     <set >
-      <if test="userName != null" >
+      <if test="userName != null and userName != ''" >
         user_name = #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
+      <if test="password != null and password != ''" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="signature != null" >
+      <if test="signature != null and signature != ''" >
         signature = #{signature,jdbcType=VARCHAR},
       </if>
-      <if test="telephone != null" >
+      <if test="telephone != null and telephone != ''" >
         telephone = #{telephone,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
+      <if test="email != null and email != ''" >
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="jobLevel != null" >
+      <if test="jobLevel != null and jobLevel != ''" >
         job_level = #{jobLevel,jdbcType=INTEGER},
       </if>
-      <if test="status != null" >
+      <if test="status != null and status != ''" >
         status = #{status,jdbcType=INTEGER},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
@@ -278,19 +278,19 @@
     id, user_name userName, telephone, email, job_level jobLevel, status
     from user
     where is_delete = 0
-    <if test="userName != null">
+    <if test="userName != null and userName != ''">
       and user_name like CONCAT(CONCAT('%',#{userName}),'%')
     </if>
-    <if test="userId != null">
+    <if test="userId != null and userId != ''">
       and id = #{userId,jdbcType=INTEGER}
     </if>
-    <if test="status != null">
+    <if test="status != null and status != ''">
       and status = #{status,jdbcType=INTEGER}
     </if>
-    <if test="telephone != null">
+    <if test="telephone != null and telephone != ''">
       and telephone = #{telephone,jdbcType=INTEGER}
     </if>
-    <if test="jobLevel != null">
+    <if test="jobLevel != null and jobLevel != ''">
       and job_level = #{jobLevel,jdbcType=INTEGER}
     </if>
     order by job_level desc

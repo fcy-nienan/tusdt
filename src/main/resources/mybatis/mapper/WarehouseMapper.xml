@@ -80,10 +80,10 @@
     'true' as QUERYID,
     <include refid="Base_Column_List" />
     from warehouse
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null and orderByClause != ''" >
       order by ${orderByClause}
     </if>
   </select>
@@ -99,7 +99,7 @@
   </delete>
   <delete id="deleteByExample" parameterType="com.assetManage.tusdt.model.WarehouseExample" >
     delete from warehouse
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
@@ -114,93 +114,93 @@
   <insert id="insertSelective" parameterType="com.assetManage.tusdt.model.Warehouse" >
     insert into warehouse
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         id,
       </if>
-      <if test="name != null" >
+      <if test="name != null and name != ''" >
         name,
       </if>
-      <if test="address != null" >
+      <if test="address != null and address != ''" >
         address,
       </if>
-      <if test="manageId != null" >
+      <if test="manageId != null and manageId != ''" >
         manage_id,
       </if>
       <if test="createTime != null" >
         create_time,
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         remarks,
       </if>
-      <if test="mapId != null" >
+      <if test="mapId != null and mapId != ''" >
         map_id,
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         is_delete,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="name != null" >
+      <if test="name != null and name != ''" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="address != null" >
+      <if test="address != null and address != ''" >
         #{address,jdbcType=VARCHAR},
       </if>
-      <if test="manageId != null" >
+      <if test="manageId != null and manageId != ''" >
         #{manageId,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null and createTime != ''" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="mapId != null" >
+      <if test="mapId != null and mapId != ''" >
         #{mapId,jdbcType=INTEGER},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         #{isDelete,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.assetManage.tusdt.model.WarehouseExample" resultType="java.lang.Integer" >
     select count(*) from warehouse
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update warehouse
     <set >
-      <if test="record.id != null" >
+      <if test="record.id != null and record.id != ''" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.name != null" >
+      <if test="record.name != null and record.name != ''" >
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.address != null" >
+      <if test="record.address != null and record.address != ''" >
         address = #{record.address,jdbcType=VARCHAR},
       </if>
-      <if test="record.manageId != null" >
+      <if test="record.manageId != null and record.manageId != ''" >
         manage_id = #{record.manageId,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.remarks != null" >
+      <if test="record.remarks != null and record.remarks != ''" >
         remarks = #{record.remarks,jdbcType=VARCHAR},
       </if>
-      <if test="record.mapId != null" >
+      <if test="record.mapId != null and record.mapId != ''" >
         map_id = #{record.mapId,jdbcType=INTEGER},
       </if>
-      <if test="record.isDelete != null" >
+      <if test="record.isDelete != null and record.isDelete != ''" >
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
     </set>
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
@@ -214,32 +214,32 @@
       remarks = #{record.remarks,jdbcType=VARCHAR},
       map_id = #{record.mapId,jdbcType=INTEGER},
       is_delete = #{record.isDelete,jdbcType=INTEGER}
-    <if test="_parameter != null" >
+    <if test="_parameter != null and _parameter != ''" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.assetManage.tusdt.model.Warehouse" >
     update warehouse
     <set >
-      <if test="name != null" >
+      <if test="name != null and name != ''" >
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="address != null" >
+      <if test="address != null and address != ''" >
         address = #{address,jdbcType=VARCHAR},
       </if>
-      <if test="manageId != null" >
+      <if test="manageId != null and manageId != ''" >
         manage_id = #{manageId,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null " >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks != null and remarks != ''" >
         remarks = #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="mapId != null" >
+      <if test="mapId != null and mapId != ''" >
         map_id = #{mapId,jdbcType=INTEGER},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != ''" >
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
@@ -261,13 +261,13 @@
     where 1>0
     and w.is_delete = 0
     and u.id = w.manage_id
-    <if test="warehouseId != null" >
+    <if test="warehouseId != null and warehouseId != ''" >
       and w.id = #{warehouseId,jdbcType=INTEGER}
     </if>
-    <if test="warehouseName != null">
+    <if test="warehouseName != null and warehouseName != ''">
       AND w.name like CONCAT(CONCAT('%',#{warehouseName}),'%')
     </if>
-    <if test="address != null">
+    <if test="address != null and address != ''">
       AND w.address like CONCAT(CONCAT('%',#{address}),'%')
     </if>
     GROUP BY w.id

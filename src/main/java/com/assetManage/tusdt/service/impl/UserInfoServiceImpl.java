@@ -116,6 +116,8 @@ public class UserInfoServiceImpl implements UserInfoService {
             responseData.setError("用户不存在");
             return responseData;
         }
+        System.out.println(oldUser.toString());
+        System.out.println(user.toString());
         if(user.getUserName() != null && !user.getUserName().equals(oldUser.getUserName())) {
             responseData.setError("不能修改用户名！");
             return responseData;
@@ -128,7 +130,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             String hashPassword = HashUtils.hashEncrypt(user.getPassword(),CommonConstant.PASSWORD_HASH);
             user.setPassword(hashPassword);
         }
-
+        System.out.println(user.toString());
         Integer result = userMapper.updateByPrimaryKeySelective(user);
         if (result == 1) {
             responseData.setOK("修改成功");
@@ -177,6 +179,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             return responseData;
         }
         userLoginBO.setCode(user.getJobLevel().toString());
+        userLoginBO.setUser(user);
         if(user.getStatus().equals(CommonConstant.USER_STATUS_ABNORMAL)) {
             responseData.setError("账号冻结 请联系管理员");
             return responseData;

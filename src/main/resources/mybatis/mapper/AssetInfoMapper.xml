@@ -58,120 +58,120 @@
   <insert id="insertSelective" parameterType="com.assetManage.tusdt.model.AssetInfo" >
     insert into asset_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id != null and id != ''" >
         id,
       </if>
-      <if test="assetName != null" >
+      <if test="assetName  != null and assetName != ''" >
         asset_name,
       </if>
-      <if test="typeId != null" >
+      <if test="typeId  != null and typeId != ''" >
         type_id,
       </if>
-      <if test="version != null" >
+      <if test="version  != null and version != ''" >
         version,
       </if>
-      <if test="manufacture != null" >
+      <if test="manufacture  != null and manufacture != ''" >
         manufacture,
       </if>
-      <if test="price != null" >
+      <if test="price  != null and price != ''" >
         price,
       </if>
-      <if test="status != null" >
+      <if test="status  != null and status != ''" >
         status,
       </if>
-      <if test="purchaseDate != null" >
+      <if test="purchaseDate  != null " >
         purchase_date,
       </if>
-      <if test="life != null" >
+      <if test="life  != null and life != ''" >
         life,
       </if>
-      <if test="useType != null" >
+      <if test="useType  != null and useType != ''" >
         use_type,
       </if>
-      <if test="manageId != null" >
+      <if test="manageId  != null and manageId != ''" >
         manage_id,
       </if>
-      <if test="warehouseId != null" >
+      <if test="warehouseId  != null and warehouseId != ''" >
         warehouse_id,
       </if>
-      <if test="mapId != null" >
+      <if test="mapId  != null and mapId != ''" >
         map_id,
       </if>
-      <if test="assetNum != null" >
+      <if test="assetNum  != null and assetNum != ''" >
         asset_num,
       </if>
-      <if test="remarks != null" >
+      <if test="remarks  != null and remarks != ''" >
         remarks,
       </if>
-      <if test="image1 != null" >
+      <if test="image1  != null and image1 != ''" >
         image1,
       </if>
-      <if test="image2 != null" >
+      <if test="image2  != null and image2 != ''" >
         image2,
       </if>
-      <if test="image3 != null" >
+      <if test="image3  != null and image3 != ''" >
         image3,
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete  != null and isDelete != ''" >
         is_delete,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+      <if test="id  != null and id != ''" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="assetName != null" >
+      <if test="assetName  != null and assetName != ''" >
         #{assetName,jdbcType=VARCHAR},
       </if>
-      <if test="typeId != null" >
+      <if test="typeId  != null and typeId != ''" >
         #{typeId,jdbcType=INTEGER},
       </if>
-      <if test="version != null" >
+      <if test="version  != null and version != ''" >
         #{version,jdbcType=VARCHAR},
       </if>
-      <if test="manufacture != null" >
+      <if test="manufacture  != null and manufacture != ''" >
         #{manufacture,jdbcType=VARCHAR},
       </if>
-      <if test="price != null" >
+      <if test="price  != null and price != ''" >
         #{price,jdbcType=BIGINT},
       </if>
-      <if test="status != null" >
+      <if test="status  != null and status != ''" >
         #{status,jdbcType=INTEGER},
       </if>
-      <if test="purchaseDate != null" >
+      <if test="purchaseDate  != null and purchaseDate != ''" >
         #{purchaseDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="life != null" >
+      <if test="life  != null and life != ''" >
         #{life,jdbcType=INTEGER},
       </if>
-      <if test="useType != null" >
+      <if test="useType  != null and useType != ''" >
         #{useType,jdbcType=INTEGER},
       </if>
-      <if test="manageId != null" >
+      <if test="manageId  != null and manageId != ''" >
         #{manageId,jdbcType=INTEGER},
       </if>
-      <if test="warehouseId != null" >
+      <if test="warehouseId  != null and warehouseId != ''" >
         #{warehouseId,jdbcType=INTEGER},
       </if>
-      <if test="mapId != null" >
+      <if test="mapId  != null and mapId != ''" >
         #{mapId,jdbcType=INTEGER},
       </if>
-      <if test="assetNum != null" >
+      <if test="assetNum  != null and assetNum != ''" >
         #{assetNum,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks  != null and remarks != ''" >
         #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="image1 != null" >
+      <if test="image1  != null and image1 != ''" >
         #{image1,jdbcType=VARCHAR},
       </if>
-      <if test="image2 != null" >
+      <if test="image2  != null and image2 != ''" >
         #{image2,jdbcType=VARCHAR},
       </if>
-      <if test="image3 != null" >
+      <if test="image3  != null and image3 != ''" >
         #{image3,jdbcType=VARCHAR},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete  != null and isDelete != ''" >
         #{isDelete,jdbcType=INTEGER},
       </if>
     </trim>
@@ -179,58 +179,58 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.assetManage.tusdt.model.AssetInfo" >
     update asset_info
     <set >
-      <if test="assetName != null" >
+      <if test="assetName  != null and assetName != ''" >
         asset_name = #{assetName,jdbcType=VARCHAR},
       </if>
-      <if test="typeId != null" >
+      <if test="typeId  != null and typeId != ''" >
         type_id = #{typeId,jdbcType=INTEGER},
       </if>
-      <if test="version != null" >
+      <if test="version  != null and version != ''" >
         version = #{version,jdbcType=VARCHAR},
       </if>
-      <if test="manufacture != null" >
+      <if test="manufacture  != null and manufacture != ''" >
         manufacture = #{manufacture,jdbcType=VARCHAR},
       </if>
-      <if test="price != null" >
+      <if test="price  != null and price != ''" >
         price = #{price,jdbcType=BIGINT},
       </if>
-      <if test="status != null" >
+      <if test="status  != null and status != ''" >
         status = #{status,jdbcType=INTEGER},
       </if>
-      <if test="purchaseDate != null" >
+      <if test="purchaseDate  != null" >
         purchase_date = #{purchaseDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="life != null" >
+      <if test="life  != null and life != ''" >
         life = #{life,jdbcType=INTEGER},
       </if>
-      <if test="useType != null" >
+      <if test="useType  != null and useType != ''" >
         use_type = #{useType,jdbcType=INTEGER},
       </if>
-      <if test="manageId != null" >
+      <if test="manageId  != null and manageId != ''" >
         manage_id = #{manageId,jdbcType=INTEGER},
       </if>
-      <if test="warehouseId != null" >
+      <if test="warehouseId  != null and warehouseId != ''" >
         warehouse_id = #{warehouseId,jdbcType=INTEGER},
       </if>
-      <if test="mapId != null" >
+      <if test="mapId  != null and mapId != ''" >
         map_id = #{mapId,jdbcType=INTEGER},
       </if>
-      <if test="assetNum != null" >
+      <if test="assetNum  != null and assetNum != ''" >
         asset_num = #{assetNum,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null" >
+      <if test="remarks  != null and remarks != ''" >
         remarks = #{remarks,jdbcType=VARCHAR},
       </if>
-      <if test="image1 != null" >
+      <if test="image1  != null and image1 != ''" >
         image1 = #{image1,jdbcType=VARCHAR},
       </if>
-      <if test="image2 != null" >
+      <if test="image2  != null and image2 != ''" >
         image2 = #{image2,jdbcType=VARCHAR},
       </if>
-      <if test="image3 != null" >
+      <if test="image3  != null and image3 != ''" >
         image3 = #{image3,jdbcType=VARCHAR},
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete  != null and isDelete != ''" >
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
@@ -261,19 +261,19 @@
   <select id="selectAssetList" resultType="com.assetManage.tusdt.model.bo.AssetListBO">
     select ai.id, ai.asset_name assetName, version, status, ai.use_type useType, w.name warehouseName,date_format(purchase_date, '%Y-%m-%d %H:%i:%s') purchaseDate,ai.asset_num assetNum from asset_info ai, warehouse w
     where ai.warehouse_id = w.id
-    <if test="assetId != null" >
+    <if test="assetId  != null and assetId != ''" >
       and ai.id = #{assetId,jdbcType=INTEGER}
     </if>
-    <if test="status != null" >
+    <if test="status  != null and status != ''" >
       and ai.status = #{status,jdbcType=INTEGER}
     </if>
-    <if test="assetName != null">
+    <if test="assetName  != null and assetName != ''">
       AND ai.asset_name like CONCAT(CONCAT('%',#{assetName}),'%')
     </if>
-    <if test="repositoryName != null">
+    <if test="repositoryName  != null and repositoryName != ''">
       AND w.name like CONCAT(CONCAT('%',#{repositoryName}),'%')
     </if>
-    <if test="useType != null">
+    <if test="useType  != null and useType != ''">
       and  #{useType,jdbcType=INTEGER} >= ai.use_type
     </if>
   </select>

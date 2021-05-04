@@ -90,4 +90,19 @@ public class User {
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", signature='" + signature + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                ", jobLevel=" + jobLevel +
+                ", status=" + status +
+                ", isDelete=" + isDelete +
+                '}';
+    }
 }

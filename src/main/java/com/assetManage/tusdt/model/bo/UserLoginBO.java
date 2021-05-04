@@ -1,5 +1,7 @@
 package com.assetManage.tusdt.model.bo;
 
+import com.assetManage.tusdt.model.User;
+
 /**
  * Description:
  * Author: xxw
@@ -11,6 +13,16 @@ public class UserLoginBO {
     private String code;
 
     private String token;
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getCode() {
         return code;
