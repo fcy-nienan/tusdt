@@ -8,6 +8,7 @@ import java.io.Serializable;
  *
  *
  *
+ *
  */
 @SuppressWarnings("unchecked")
 public class ResponseData<T> implements Serializable {
