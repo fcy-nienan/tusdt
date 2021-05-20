@@ -1,5 +1,7 @@
 package com.assetManage.tusdt.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Warehouse {
@@ -11,6 +13,7 @@ public class Warehouse {
 
     private Integer manageId;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createTime;
 
     private String remarks;

@@ -200,10 +200,10 @@
     <if test="userName != null and userName != ''">
       and u.user_name like CONCAT(CONCAT('%',#{userName}),'%')
     </if>
-    <if test="dataFrom != null " >
+    <if test="dataFrom != null and dataFrom != '' " >
       and start_time >= #{dataFrom,jdbcType=VARCHAR}
     </if>
-    <if test="dataEnd != null " >
+    <if test="dataEnd != null and dataEnd != '' " >
       and  #{dataEnd,jdbcType=VARCHAR} >= start_time
     </if>
     order by ol.start_time desc
