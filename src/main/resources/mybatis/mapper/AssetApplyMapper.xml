@@ -402,9 +402,9 @@
     select aa.id, ai.asset_name assetName ,aa.type applyType, u.user_name userName,date_format(aa.start_time, '%Y-%m-%d %H:%i:%s') startTime,aa.result result,ai.status status from  asset_apply aa, asset_info ai, user u
     where aa.asset_id = ai.id
     and aa.user_id = u.id
-<!--    <if test="applyId != null" >-->
-<!--      and aa.id = #{applyId,jdbcType=INTEGER}-->
-<!--    </if>-->
+    <if test="assetId != null and assetId !=''" >
+      and aa.id = #{assetId,jdbcType=INTEGER}
+    </if>
     <if test="assetName != null and assetName != ''">
       AND ai.asset_name like CONCAT(CONCAT('%',#{assetName}),'%')
     </if>
