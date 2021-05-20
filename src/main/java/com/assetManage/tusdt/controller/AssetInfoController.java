@@ -142,10 +142,10 @@ public class AssetInfoController {
 
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         Integer userId = (Integer) request.getAttribute("id");
         responseData = assetInfoService.modifyAsset(userId,assetInfo);
         /**
@@ -176,10 +176,10 @@ public class AssetInfoController {
     ) {
         ResponseData<List<AssetUseHistoryBO>> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         List<AssetUseHistoryBO> assetList = assetInfoService.getAssetHistory(currPage, pageSize, assetId, assetName, userName, type);
         if(assetList == null ) {
             responseData.setError("获取失败");

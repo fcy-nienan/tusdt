@@ -36,10 +36,10 @@ public class DataMapController {
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
         Integer userId = (Integer) request.getAttribute("id");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = dataMapService.addMap(assetMap);
 
         return responseData;

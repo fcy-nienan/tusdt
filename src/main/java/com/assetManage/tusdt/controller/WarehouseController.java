@@ -47,10 +47,10 @@ public class WarehouseController {
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
         Integer userId = (Integer) request.getAttribute("id");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = warehouseInfoService.addWarehouse(userId, warehouse);
         return responseData;
     }
@@ -75,10 +75,10 @@ public class WarehouseController {
 
         int rank = (int) request.getAttribute("jobLevel");
         Integer userId = (Integer) request.getAttribute("id");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         List<WarehouseBO> warehouseList = warehouseInfoService.getWarehouseList(currPage,pageSize,id,warehouseName,address);
 
 
@@ -108,10 +108,10 @@ public class WarehouseController {
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
         Integer userId = (Integer) request.getAttribute("id");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = warehouseInfoService.removeWarehouse(userId,warehouseId);
         return responseData;
     }
@@ -130,10 +130,10 @@ public class WarehouseController {
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
         Integer userId = (Integer) request.getAttribute("id");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = warehouseInfoService.modifyWarehouse(userId,warehouse);
         return responseData;
     }
@@ -152,10 +152,10 @@ public class WarehouseController {
 
         int rank = (int) request.getAttribute("jobLevel");
         Integer userId = (Integer) request.getAttribute("id");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         List<WarehouseBox> warehouseList = warehouseInfoService.getWarehouseList();
 
 

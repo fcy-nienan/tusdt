@@ -51,10 +51,10 @@ public class AssetLogInfoController {
 
         ResponseData<List<OperLogListBO>> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         List<OperLogListBO> operLogListBOS = assetLogInfoService.getOperLog(userName, dataFrom, dataEnd);
         if(operLogListBOS == null) {
             responseData.setError("获取失败");

@@ -75,10 +75,10 @@ public class AssetApplyController {
 
         ResponseData<List<AssetApplyListBO>> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         List<AssetApplyListBO> assetLogListBOList = assetApplyService.getAssetApplyList(currPage, pageSize, assetId, userName, status, telephone, jobLevel);
         PageHelper.startPage(currPage,pageSize);
         PageInfo<AssetApplyListBO> pageInfo = new PageInfo<>(assetLogListBOList);
@@ -100,10 +100,10 @@ public class AssetApplyController {
 
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = assetApplyService.agreeApply(applyId);
         return responseData;
     }
@@ -122,10 +122,10 @@ public class AssetApplyController {
 
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = assetApplyService.refuseApply(applyId);
         return responseData;
     }
@@ -143,10 +143,10 @@ public class AssetApplyController {
 
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = assetApplyService.returnAsset(applyId);
         return responseData;
     }

@@ -52,10 +52,10 @@ public class UserInfoController {
         ResponseData<List<UserListBO>> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
         //
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足，仅管理员可见");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足，仅管理员可见");
+//            return responseData;
+//        }
         if (telephone != null && telephone.equals("")) {
             telephone = null;
         }
@@ -86,10 +86,10 @@ public class UserInfoController {
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
         Integer userId = (Integer) request.getAttribute("id");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = userInfoService.addUser(user,userId);
         return responseData;
     }
@@ -109,10 +109,10 @@ public class UserInfoController {
         ResponseData<String> responseData = new ResponseData<>();
         Integer adminId = (Integer) request.getAttribute("id");
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = userInfoService.deleteUser(userId,adminId);
         return responseData;
     }
@@ -130,10 +130,10 @@ public class UserInfoController {
 
         ResponseData<String> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = userInfoService.modifyUserInfo(user);
         return responseData;
     }
@@ -152,10 +152,10 @@ public class UserInfoController {
 
         ResponseData<User> responseData = new ResponseData<>();
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = userInfoService.getUserDetail(userId);
         return responseData;
     }
@@ -193,10 +193,10 @@ public class UserInfoController {
         ResponseData<String> responseData = new ResponseData<>();
         Integer adminId = (Integer) request.getAttribute("id");
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = userInfoService.agreeUser(userId);
         return responseData;
     }
@@ -216,10 +216,10 @@ public class UserInfoController {
         ResponseData<String> responseData = new ResponseData<>();
         Integer adminId = (Integer) request.getAttribute("id");
         int rank = (int) request.getAttribute("jobLevel");
-        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
-            responseData.setError("权限不足");
-            return responseData;
-        }
+//        if(rank < CommonConstant.JOB_LEVEL_SUPER_ADMIN) {
+//            responseData.setError("权限不足");
+//            return responseData;
+//        }
         responseData = userInfoService.disagreeUser(userId);
         return responseData;
     }
